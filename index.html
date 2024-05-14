@@ -1,4 +1,4 @@
-<!DOCTYPE html><!--  This site was created in Webflow. https://www.webflow.com  --><!--  Last Published: Mon May 13 2024 21:22:48 GMT+0000 (Coordinated Universal Time)  -->
+<!DOCTYPE html><!--  This site was created in Webflow. https://www.webflow.com  --><!--  Last Published: Tue May 14 2024 19:43:03 GMT+0000 (Coordinated Universal Time)  -->
 <html data-wf-page="66287f19ab08bbdae1c7c988" data-wf-site="66287f19ab08bbdae1c7c97a">
 <head>
   <meta charset="utf-8">
@@ -24,7 +24,10 @@
       <div id="cropperContainer" class="croppercontainer"><img src="images/eye-color1-2.png" loading="lazy" sizes="100vw" srcset="images/eye-color1-2-p-500.png 500w, images/eye-color1-2-p-800.png 800w, images/eye-color1-2-p-1080.png 1080w, images/eye-color1-2.png 1497w" alt="" id="cropperImage"></div>
       <div class="div-block-11">
         <div class="html-embed-2 w-embed"><input type="range" id="rotationSlider" min="-180" max="180" value="0" step="1"></div>
-        <a id="cropBtn" href="#" class="button w-button">Button Text</a>
+        <div class="div-block-16">
+          <a id="cropBtn" href="#" class="button w-button">Button Text</a>
+          <div class="text-block-3">Aceptar</div>
+        </div>
       </div>
     </div>
     <div id="livePreviewContainer" class="livepreviewcontainer"><img src="https://d3e54v103j8qbb.cloudfront.net/plugins/Basic/assets/placeholder.60f9b1840c.svg" loading="lazy" id="livePreviewImage" alt="" class="image-6"></div>
@@ -518,7 +521,7 @@ select {
             </div>
           </div>
         </div>
-        <div class="button_ctn"><input class="field send w-input" maxlength="256" name="mail" data-name="mail" placeholder="Correo" type="email" id="mail" required=""><input class="field send w-input" maxlength="256" name="tel" data-name="tel" placeholder="Teléfono" type="tel" id="tel" required="">
+        <div class="button_ctn"><input class="field send w-input" maxlength="256" name="mail" data-name="mail" placeholder="Correo" type="email" id="mail" required=""><input class="field send w-input" maxlength="10" name="tel" data-name="tel" placeholder="Teléfono" type="tel" id="tel" required="">
           <div class="text-block-2"> Al dar click en &quot;Generar ID&quot; estarás aceptando los <a href="https://elsayelmar.com/legal" target="_blank" class="link">términos y condiciones</a> de este sitio.</div>
           <div class="code-embed w-embed w-script">
             <script>
@@ -539,6 +542,12 @@ document.addEventListener('DOMContentLoaded', function() {
     const loadingIndicator = document.getElementById('loadingIndicator');
     form.addEventListener('submit', function(event) {
         event.preventDefault(); // Prevent default form submission
+  			// Get the selected country data
+  			const countryData = phoneInput.getSelectedCountryData();
+  			// Extract the country code
+ 				const countryCode = countryData.dialCode;
+ 				// Do whatever you want with the country code here, like submitting it along with the form
+ 				 console.log("Country Code:", countryCode);
         // UI feedback: disable the submit button and show the loading indicator
         submitButton.disabled = true;
         loadingIndicator.style.display = 'block';
@@ -557,6 +566,7 @@ document.addEventListener('DOMContentLoaded', function() {
               formData.append('localidad', document.getElementById('localidad').value);
               formData.append('mail', document.getElementById('mail').value);
               formData.append('tel', document.getElementById('tel').value);
+              formData.append('ccode', countryCode);
               // Send FormData to the server using Fetch API
               fetch(form.action, {
                   method: 'POST',
@@ -635,7 +645,7 @@ function downloadBlob(blob, filename) {
           </div><input type="submit" data-wait="Espera por favor..." id="obtener" class="submit-button btn-btn w-button" value="Generar ID">
           <div class="code-embed-3 w-embed">
             <div id="loadingIndicator" style="display: none;">Procesando ID...</div>
-            <button class="Submit Button" type="button" id="downloadButton" style="display: none;">Descargar ID</button>
+            <button class="Submit Button" type="button" id="downloadButton" style="display: none;color:#222;">Descargar ID</button>
             <style>
 button#downloadButton {
     width: 100%;
