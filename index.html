@@ -1,4 +1,4 @@
-<!DOCTYPE html><!--  This site was created in Webflow. https://www.webflow.com  --><!--  Last Published: Thu May 16 2024 17:47:39 GMT+0000 (Coordinated Universal Time)  -->
+<!DOCTYPE html><!--  This site was created in Webflow. https://www.webflow.com  --><!--  Last Published: Mon May 20 2024 02:27:54 GMT+0000 (Coordinated Universal Time)  -->
 <html data-wf-page="66287f19ab08bbdae1c7c988" data-wf-site="66287f19ab08bbdae1c7c97a">
 <head>
   <meta charset="utf-8">
@@ -512,7 +512,7 @@ select {
                     </select>
                   </div>
                 </div>
-                <div class="div-block-3"><label for="localidad" class="field-label">Ubicación</label><input class="field w-input" maxlength="15" name="Localidad" data-name="Localidad" placeholder="Estado, Localidad, etc." minlength="3" type="text" id="localidad" required=""></div>
+                <div class="div-block-3"><label for="localidad" class="field-label">Ubicación</label><input class="field w-input" maxlength="16" name="Localidad" data-name="Localidad" placeholder="Estado, Localidad, etc." minlength="3" type="text" id="localidad" required=""></div>
               </div>
             </div>
             <div id="w-node-eb1d1127-ccef-9e39-0cbc-368a953d9a60-e1c7c988" class="div-block-12">
@@ -522,7 +522,7 @@ select {
           </div>
         </div>
         <div class="button_ctn"><input class="field send w-input" maxlength="256" name="mail" data-name="mail" placeholder="Correo" type="email" id="mail" required=""><input class="field send w-input" maxlength="10" name="tel" data-name="tel" placeholder="Teléfono" type="tel" id="tel" required="">
-          <div class="text-block-2"> Al dar click en &quot;Generar ID&quot; estarás aceptando los <a href="https://elsayelmar.com/legal" target="_blank" class="link">términos y condiciones</a> de este sitio.</div>
+          <div class="text-block-2"> Al dar click en &quot;Generar ID&quot; estarás aceptando los <a href="https://elsayelmar.com/legal" target="_blank" class="link">términos y condiciones</a> de este sitio.<br><br>Al generar tu ID, se descargará automáticamente, además en una hora recibirás un email de confirmación con la liga a tu ID.</div>
           <div class="code-embed w-embed w-script">
             <script>
     // Get current date
@@ -646,7 +646,7 @@ function downloadBlob(blob, filename) {
 </script> -->
           </div><input type="submit" data-wait="Espera por favor..." id="obtener" class="submit-button btn-btn w-button" value="Generar ID">
           <div class="code-embed-3 w-embed">
-            <div id="loadingIndicator" style="display: none;">Procesando ID, debería estar lista en 15 segundos.</div>
+            <div id="loadingIndicator" style="display:none;">Procesando ID, debería estar lista en 15 segundos.</div>
             <button class="Submit Button" type="button" id="downloadButton" style="display: none;color:#222;">Descargar ID</button>
             <style>
 button#downloadButton {
@@ -978,6 +978,10 @@ input[type="date"] {
       <div class="w-form-fail">
         <div>Oops! Something went wrong while submitting the form.</div>
       </div>
+    </div>
+  </div>
+  <div class="div-block-17">
+    <div class="text-block-4">Coded with ❤️ by <a href="https://www.productosdigitales.mx/" target="_blank" class="link-2">Productos Digitales</a>
     </div>
   </div>
   <script src="https://d3e54v103j8qbb.cloudfront.net/js/jquery-3.5.1.min.dc5e7f18c8.js?site=66287f19ab08bbdae1c7c97a" type="text/javascript" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
